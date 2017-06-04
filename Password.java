@@ -26,7 +26,39 @@ public class Password
 			System.out.println("Password too short");
 			return rulesPassed;
 		}
+      
+   // password needs to contain at least one uppercase, one lower case and one number
 	
+   int lowers  = 0;
+   int uppers  = 0;
+   int numbers = 0;
+   
+   for(char c : pw.toCharArray())
+   {
+   if ((c >= 'a')&&(c <= 'z')) 
+   {
+      lowers++;
+   }
+   else if ((c == 'A')&&(c == 'Z'))
+   {
+      uppers++;
+   }
+   else if ((c == '0')&&(c == '9'))
+   {
+      numbers++;
+   }
+   
+   if ( (lowers>0)&&(uppers>0)&&(numbers>0))
+   {
+      rulesPassed++;
+   }
+   else
+   {
+      System.out.println("need at least one upper, one lower and a number");
+   }
+}
+   
+   
 	// We got this far, we have a good password
 	return rulesPassed;
 	}

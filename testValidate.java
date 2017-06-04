@@ -15,6 +15,9 @@ public class testValidate extends TestCase
 
 		result = password.validate("goodenough");
 		assertEquals(2,result,0);
+      
+      result = password.validate("abcABC123");
+      assertEquals(3,result,0);
 	}
 }
 
